@@ -8,8 +8,13 @@
 using namespace std;
 using namespace chrono;
 
+// g++ lab1.cpp -o lab1
+// ./lab1
+// ./lab1 > output.txt
+
+
 // Функция сортировки перемешиванием (шейкерная сортировка)
-void shakerSort(vector<double>& arr, int& passCount, long long& swapCount) { // Заменили swapCount на long long
+void shakerSort(vector<double>& arr, int& passCount, long long& swapCount) {
     bool swapped = true;
     int start = 0;
     int end = arr.size() - 1;
@@ -79,7 +84,7 @@ int main() {
                 auto endTime = high_resolution_clock::now();
                 double duration = duration_cast<microseconds>(endTime - startTime).count() / 1e6;
                 
-                // Проверяем, не ушел ли swapCount в отрицательное значение
+            
                 if (swapCount < 0) {
                     cerr << "Ошибка: swapCount отрицательный! size=" << size << ", series=" << series + 1 << ", attempt=" << attempt + 1 << "\n";
                 }
